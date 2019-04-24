@@ -1,0 +1,35 @@
+
+.categorie:hover{
+  box-shadow:  8px 8px 10px rgba(0,0,0,0.5);
+}
+
+body {
+    text-align: center;
+  }
+
+  .error-li{
+      list-style: square;
+  }
+.login_page {
+    padding: 0;
+}
+.dropdown-toggle-top-user:hover {
+color: rgb(102, 47, 153);
+}
+.note-editing-area {
+    text-align: left;
+}
+#sale ~.price-on-sale {
+display: none;
+}
+#sale:checked ~ .price-on-sale {
+    display: block;
+}
+.short-description {
+   box-sizing: border-box;
+}
+
+.edit-user-roles {
+ cursor: pointer;
+}
+
