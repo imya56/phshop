@@ -24,7 +24,7 @@ class ProductRequest extends FormRequest
             'price' => 'required|numeric',
             'image' => 'image',
             'sale' => 'sometimes',
-            'new_price' => 'required_if:sale,1|numeric',
+            'new_price' => 'numeric|required_if:sale,1',
             'old_price' => 'required_if:sale,1|numeric',
 
         ];

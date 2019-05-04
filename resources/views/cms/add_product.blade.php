@@ -1,6 +1,6 @@
 @extends('cms.cms_master')
 @section('main_cms_content')
-<div class=" d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
+<div class=" d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-5 pt-3 pb-2 mb-3 ">
     <h1 class="h1 ">Add Product Form</h1>
 
 </div>
@@ -42,14 +42,14 @@
                     </label>
             </div>
             <label for="sale"> <input type="checkbox" name="sale" id="sale" value="1"> On Sale</label>
-            <div class="price-on-sale">
+            <div class="price-on-sale d-none">
                 <div class="form-group">
                     <label for="old-price">Old price:</label>
-                    <input type="text" name="old_price" id="old-price" value="{{ old('old_price') }}" size="2">
+                    <input type="text" name="old_price" id="old-price" value="{{ old('old_price') ?? 0 }}" size="2">
                 </div>
                 <div class="form-group">
-                    <label for="new-price">new price:</label>
-                    <input type="text" name="new_price" id="new-price" value="{{ old('new_price') }}" size="2">
+                    <label for="new-price">New price:</label>
+                    <input type="text" name="new_price" id="new-price" value="{{ old('new_price') ?? 0 }}" size="2">
                 </div>
             </div>
 

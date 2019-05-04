@@ -1,7 +1,7 @@
 @extends('cms.cms_master')
 @section('main_cms_content')
 <div class="pt-3 pb-2 my-5 ">
-    <h1 class="h1 ">Edit Site Products</h1>
+    <h1 class="h1 ">Edit Home Page Products</h1>
 
 </div>
 <div class="row">
@@ -14,7 +14,7 @@
                     <th class="text-center">Product Image</th>
                     <th class="text-center">Product title</th>
                     <th class="text-center">Operation</th>
-                </tr>
+                </tr> 
             </thead>
             <tbody>
                 @foreach($products as $item)
@@ -31,8 +31,8 @@
                     </td>
                     <td> {{$item['ptitle']}} </td>
                     <td>
-                        <a class="mr-2" href="{{ url('cms/home-products/' . $item['id'] . '/edit') }}"><i class="fas fa-pencil-alt"></i> Edit</a>                        |
-                        <a class="ml-2" href="{{ url('cms/home-products/' . $item['id']) }}"><i class="fas fa-trash-alt"></i> Delete</a>
+                       <a class="mr-2" href="{{ url('cms/home-products/' . $item['id'] . '/edit') }}"><i class="fas fa-pencil-alt"></i> Edit</a>                        
+                       <a class="ml-2" href="{{ url('cms/home-products/' . $item['id']) }}"><i class="fas fa-trash-alt"></i> Delete</a>
                     </td>
                 </tr>
                 @endforeach

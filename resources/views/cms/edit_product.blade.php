@@ -1,6 +1,6 @@
 @extends('cms.cms_master')
 @section('main_cms_content')
-<div class=" d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
+<div class=" d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mt-5 pt-3 pb-2 mb-3 ">
     <h1 class="h1 ">Edit Product Form</h1>
 
 </div>
@@ -42,14 +42,14 @@
                     </label>
             </div>
             <input @if($item[ 'onSale']) checked="checked" @endif type="checkbox" name="sale" id="sale" value="1"> On Sale
-            <div class="price-on-sale">
+            <div class="price-on-sale   @if (!$item['onSale']) d-none @endif">
                 <div class="form-group">
                     <label for="old-price">Old price:</label>
                     <input type="text" name="old_price" id="old-price" class="" value="{{ $item['price'] }}" size="2">
                 </div>
                 <div class="form-group">
                     <label for="new-price">new price:</label>
-                    <input type="text" name="new_price" id="new-price" value="{{ $item['new_price'] }}" size="2">
+                    <input type="text" name="new_price" id="new-price" value="{{ $item['new_price'] ?? 0 }}" size="2">
                 </div>
             </div>
             <input type="submit" value="Update" name="submit" class="btn btn-primary btn-block mt-5">

@@ -20,9 +20,9 @@ $('.btn-add-to-cart').on('click', function (e) {
     });
 });
 
-$('.origin-value').on('focusout', function () {
+$('.origin-text').on('focusout', function () {
 
-    $('.target-value').val($(this).val().permalink());
+    $('.target-text').val($(this).val().permalink());
 })
 
 $('.select-cat').change(function () {
@@ -99,13 +99,11 @@ $('#search-product').on('keyup', function () {
 });
 
 $('#sale').on('click', function () {
-    if (display === true) {
-        $(".price-on-sale").show();
-    } else if (display === false) {
-        $(".price-on-sale").hide();
-    } 0
+
+    var pb = $('.price-on-sale')
+
+    pb.hasClass('d-none') ?  pb.removeClass('d-none') :  pb.addClass('d-none')
+
 });
 
  
-
-

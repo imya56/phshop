@@ -20,6 +20,7 @@ class HomePageController extends MainController
         self::$data['products'] = Product::rightJoin('home_products AS hp', 'products.id', '=', 'hp.product_id')
             ->rightJoin('categories AS c', 'c.id', '=', 'products.categorie_id')
             ->orderBy('hp.product_place', 'asc')
+            ->select('hp.*','c.curl','products.purl', 'products.pimage', 'products.ptitle')
             ->get()->toArray();
         return view('cms.home_page_products', self::$data);
     }
@@ -43,25 +44,7 @@ class HomePageController extends MainController
      */
     public function store(Request $request)
     {
-        
-      
-        $p = HomeProduct::select('product_place')->get()->toArray();
-        $places = [];
-        foreach ($p as  $value) {
-           $places[] = $value['product_place'];
-        }
-        if(!in_array($request['product_place'], $places)){
-        
-            $product = new HomeProduct;
-            $product->product_id = $request['id'];
-            $product->product_place = $request['position'];
-            if($product->save()){
-                Session::put('sm', 'Product added');
-                return redirect('cms/home-products');            
-            }
-            
-        }
-        
+        HomeProduct::save_new($request);
     }
 
     /**
@@ -86,7 +69,9 @@ class HomePageController extends MainController
      */
     public function edit($id)
     {
-        //
+        self::$data['homeProd'] = HomeProduct::find($id);
+        self::$data['products'] = Product::all()->toArray();
+        return view('cms.edit_home_product', self::$data);
     }
 
     /**
@@ -109,7 +94,7 @@ class HomePageController extends MainController
      */
     public function destroy($id)
     {
-        Product::destroy($id);
+        HomeProduct::destroy($id);
         Session::flash('tosterPos', 'toast-top-center');
         Session::flash('sm', 'Item deleted');
         return redirect('cms/home-products');

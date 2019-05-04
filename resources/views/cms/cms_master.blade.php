@@ -104,8 +104,9 @@
     <script>
         $('#article').summernote({
              height: 300
-            });
+            });   
     </script>
+
 </body>
 
 </html>
