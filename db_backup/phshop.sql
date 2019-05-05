@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Фев 15 2019 г., 15:35
+-- Время создания: Май 05 2019 г., 19:04
 -- Версия сервера: 10.1.37-MariaDB
--- Версия PHP: 7.2.12
+-- Версия PHP: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -73,6 +73,36 @@ INSERT INTO `contents` (`id`, `menu_id`, `title`, `article`, `updated_at`, `crea
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `home_products`
+--
+
+CREATE TABLE `home_products` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_place` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `home_products`
+--
+
+INSERT INTO `home_products` (`id`, `product_id`, `product_place`, `created_at`, `updated_at`) VALUES
+(2, 1, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 21, 9, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 15, 5, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(10, 22, 3, '2019-04-15 21:11:06', '2019-04-15 21:11:06'),
+(11, 14, 6, '2019-04-15 21:12:43', '2019-04-15 21:12:43'),
+(19, 20, 7, '2019-05-02 15:38:41', '2019-05-02 15:38:41'),
+(20, 25, 8, '2019-05-02 15:40:58', '2019-05-02 15:40:58'),
+(22, 24, 4, '2019-05-02 15:57:15', '2019-05-02 15:57:15'),
+(26, 27, 2, '2019-05-02 16:21:09', '2019-05-02 16:21:09'),
+(28, 2, 1, '2019-05-02 17:02:57', '2019-05-02 17:02:57');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `menus`
 --
 
@@ -121,7 +151,8 @@ INSERT INTO `orders` (`id`, `user_id`, `total`, `data`, `updated_at`, `created_a
 (4, 9, '1395.00', 'a:2:{i:1;a:6:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:14:\"Apple Iphone X\";s:5:\"price\";d:925;s:8:\"quantity\";i:1;s:10:\"attributes\";a:1:{s:5:\"image\";s:13:\"iphone-x.jpeg\";}s:10:\"conditions\";a:0:{}}i:2;a:6:{s:2:\"id\";s:1:\"2\";s:4:\"name\";s:14:\"Apple Iphone 6\";s:5:\"price\";d:470;s:8:\"quantity\";i:1;s:10:\"attributes\";a:1:{s:5:\"image\";s:13:\"iphone-6.jpeg\";}s:10:\"conditions\";a:0:{}}}', '2019-02-09 18:23:14', '2019-02-09 18:23:14'),
 (5, 3, '1707.00', 'a:3:{i:1;a:6:{s:2:\"id\";s:1:\"1\";s:4:\"name\";s:14:\"Apple Iphone X\";s:5:\"price\";d:925;s:8:\"quantity\";i:1;s:10:\"attributes\";a:1:{s:5:\"image\";s:13:\"iphone-x.jpeg\";}s:10:\"conditions\";a:0:{}}i:16;a:6:{s:2:\"id\";s:2:\"16\";s:4:\"name\";s:9:\"Iphone SE\";s:5:\"price\";d:382;s:8:\"quantity\";i:1;s:10:\"attributes\";a:1:{s:5:\"image\";s:44:\"09.02.2019.13.41.11-pexels-photo-270686.jpeg\";}s:10:\"conditions\";a:0:{}}i:14;a:6:{s:2:\"id\";s:2:\"14\";s:4:\"name\";s:14:\"Iphone 6s PlUS\";s:5:\"price\";d:400;s:8:\"quantity\";i:1;s:10:\"attributes\";a:1:{s:5:\"image\";s:62:\"09.02.2019.13.33.02-iphone-6-apple-ios-iphone-ios-8-50680.jpeg\";}s:10:\"conditions\";a:0:{}}}', '2019-02-13 11:33:10', '2019-02-13 11:33:10'),
 (6, 3, '2100.00', 'a:2:{i:20;a:6:{s:2:\"id\";s:2:\"20\";s:4:\"name\";s:12:\"Apple Ipad 3\";s:5:\"price\";d:500;s:8:\"quantity\";i:3;s:10:\"attributes\";a:1:{s:5:\"image\";s:39:\"11.02.2019.18.16.56-ipad-147691_640.png\";}s:10:\"conditions\";a:0:{}}i:22;a:6:{s:2:\"id\";s:2:\"22\";s:4:\"name\";s:16:\"Lenovo Tablet 10\";s:5:\"price\";d:600;s:8:\"quantity\";i:1;s:10:\"attributes\";a:1:{s:5:\"image\";s:41:\"11.02.2019.18.40.42-tablet-184888_640.jpg\";}s:10:\"conditions\";a:0:{}}}', '2019-02-13 21:31:23', '2019-02-13 21:31:23'),
-(7, 3, '400.00', 'a:1:{i:17;a:6:{s:2:\"id\";s:2:\"17\";s:4:\"name\";s:24:\"Samsung Galaxy Note Edge\";s:5:\"price\";d:400;s:8:\"quantity\";i:1;s:10:\"attributes\";a:1:{s:5:\"image\";s:60:\"09.02.2019.13.44.42-samsung-galaxt-note-edge-1283897_640.jpg\";}s:10:\"conditions\";a:0:{}}}', '2019-02-13 21:33:43', '2019-02-13 21:33:43');
+(7, 3, '400.00', 'a:1:{i:17;a:6:{s:2:\"id\";s:2:\"17\";s:4:\"name\";s:24:\"Samsung Galaxy Note Edge\";s:5:\"price\";d:400;s:8:\"quantity\";i:1;s:10:\"attributes\";a:1:{s:5:\"image\";s:60:\"09.02.2019.13.44.42-samsung-galaxt-note-edge-1283897_640.jpg\";}s:10:\"conditions\";a:0:{}}}', '2019-02-13 21:33:43', '2019-02-13 21:33:43'),
+(8, 14, '199.00', 'a:1:{i:21;a:6:{s:2:\"id\";s:2:\"21\";s:4:\"name\";s:20:\"Samsung Galaxy Tab 4\";s:5:\"price\";d:199;s:8:\"quantity\";i:1;s:10:\"attributes\";a:1:{s:5:\"image\";s:40:\"11.02.2019.18.21.24-ipad-1065284_640.png\";}s:10:\"conditions\";a:0:{}}}', '2019-02-16 18:10:46', '2019-02-16 18:10:46');
 
 -- --------------------------------------------------------
 
@@ -148,15 +179,19 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `categorie_id`, `ptitle`, `particle`, `pimage`, `price`, `new_price`, `purl`, `onSale`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Apple Iphone X', 'When renaming/copying/moving a database/table/column/procedure, MySQL does not adjust the original privileges relating to these objects on its own. By selecting this option, phpMyAdmin will adjust the privilege table so that users have the same privileges on the new items.\r\n\r\nFor example: A user \'bob\'@\'localhost‘ has a ‘SELECT’ privilege on a column named ‘id’. Now, if this column is renamed to ‘id_new’, MySQL, on its own, would not adjust the column privileges to the new column name. phpMyAdmin can make this adjustment for you automatically.', 'iphone-x.jpeg', '925.00', '840.00', 'iphone-x', 1, '2019-01-25 22:44:30', '2019-02-09 12:41:56'),
 (2, 1, 'Apple Iphone 6', 'When renaming/copying/moving a database/table/column/procedure, MySQL does not adjust the original privileges relating to these objects on its own. By selecting this option, phpMyAdmin will adjust the privilege table so that users have the same privileges on the new items.\r\n\r\nFor example: A user \'bob\'@\'localhost‘ has a ‘SELECT’ privilege on a column named ‘id’. Now, if this column is renamed to ‘id_new’, MySQL, on its own, would not adjust the column privileges to the new column name. phpMyAdmin can make this adjustment for you automatically.', 'iphone-6.jpeg', '470.00', '320.00', 'iphone-6', 1, '2019-01-25 22:47:32', '2019-02-10 08:56:37'),
 (14, 1, 'Iphone 6s PlUS', '<p>fgdbs</p>', '09.02.2019.13.33.02-iphone-6-apple-ios-iphone-ios-8-50680.jpeg', '400.00', '345.00', 'iphone-6s-plus', 1, '2019-02-09 13:33:03', '2019-02-15 14:25:14'),
-(15, 2, 'Galaxy s6 Edge', '<p>text text text</p><p><br></p>', '09.02.2019.13.37.48-electronics-gadget-mobile-phone-214488.jpg', '350.00', NULL, 'galaxy-s6-edge', 0, '2019-02-09 13:37:49', '2019-02-09 13:37:49'),
+(15, 2, 'Galaxy s6 Edge', '<p>text text text</p><p><br></p>', '09.02.2019.13.37.48-electronics-gadget-mobile-phone-214488.jpg', '350.00', '0.00', 'galaxy-s6-edge', 0, '2019-02-09 13:37:49', '2019-05-01 16:01:27'),
 (16, 1, 'Iphone SE', '<p>jboadk ngoj&nbsp;&nbsp;&nbsp;&nbsp;</p>', '09.02.2019.13.41.11-pexels-photo-270686.jpeg', '382.00', NULL, 'iphone-se', 0, '2019-02-09 13:41:11', '2019-02-09 13:41:11'),
 (17, 2, 'Samsung Galaxy Note Edge', '<p>hbvdfbdfnbdfb</p>', '09.02.2019.13.44.42-samsung-galaxt-note-edge-1283897_640.jpg', '400.00', NULL, 'samsung-galaxy-note-edge', 0, '2019-02-09 13:44:42', '2019-02-09 13:44:42'),
 (20, 3, 'Apple Ipad 3', '<p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext<br></p>', '11.02.2019.18.16.56-ipad-147691_640.png', '500.00', '45.00', 'apple-ipad-3', 1, '2019-02-11 18:16:56', '2019-02-15 14:23:24'),
 (21, 3, 'Samsung Galaxy Tab 4', '<p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext<br></p>', '11.02.2019.18.21.24-ipad-1065284_640.png', '199.00', '234.00', 'samsung-galaxy-tab-4', 1, '2019-02-11 18:21:24', '2019-02-15 14:28:04'),
-(22, 3, 'Lenovo Tablet 10', '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; letter-spacing: -0.224px; white-space: nowrap;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span></p><p><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\"><br></span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><br></p>', '11.02.2019.18.40.42-tablet-184888_640.jpg', '600.00', NULL, 'lenovo-tablet-10', 0, '2019-02-11 18:40:42', '2019-02-15 13:57:55');
+(22, 3, 'Lenovo Tablet 10', '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; letter-spacing: -0.224px; white-space: nowrap;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span></p><p><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\"><br></span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><span style=\"color: rgb(51, 51, 51); font-family: &quot;SF Pro Text&quot;, &quot;SF Pro Icons&quot;, &quot;AOS Icons&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; letter-spacing: -0.224px; white-space: nowrap; font-size: 0.875rem;\">teztv&nbsp;</span><br></p>', '11.02.2019.18.40.42-tablet-184888_640.jpg', '600.00', NULL, 'lenovo-tablet-10', 0, '2019-02-11 18:40:42', '2019-02-15 13:57:55'),
+(23, 2, 'Samsung S4', '<p>text text text text text text text&nbsp;</p>', '01.05.2019.16.02.20-smartphone-1957740_640.jpg', '234.00', '222.00', 'samsung-s4', 1, '2019-05-01 16:02:20', '2019-05-01 16:02:20'),
+(24, 1, 'Iphone 7', '<p>text text text text text&nbsp;</p>', '01.05.2019.16.26.10-smartphone-1894723_640.jpg', '555.00', '0.00', 'iphone-7', 0, '2019-05-01 16:26:10', '2019-05-01 16:26:10'),
+(25, 1, 'Iphone 4', '<p>txt text text text text text text text text text text text text text</p>', '02.05.2019.15.35.42-smartphone-153650_640.png', '222.00', '0.00', 'iphone-4', 0, '2019-05-02 15:35:42', '2019-05-02 15:35:42'),
+(26, 1, 'iphone 4 mini', '<p>text text text text text text text text text text</p>', '02.05.2019.16.09.17-mobile-phone-2198770_640.png', '222.00', '0.00', 'iphone-4-mini', 0, '2019-05-02 16:09:18', '2019-05-02 16:09:18'),
+(27, 1, 'iphone 5 white', '<p>text text text text text text text text text text</p>', '02.05.2019.16.20.56-smartphone-157082_1280.png', '345.00', '0.00', 'iphone-5-white', 0, '2019-05-02 16:20:56', '2019-05-02 16:20:56');
 
 -- --------------------------------------------------------
 
@@ -178,16 +213,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `updated_at`, `created_at`) VALUES
-(1, '`', '`', '`', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, '``', '``', '``', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 'imya56', 'imya56@gmail.com', '$2y$10$e3ACENsz.obv002cZNDi1.HhlgDLYByWhFDbMZ/pxKH41M5nAcyfe', '2019-01-28 13:04:15', '2019-01-28 13:04:15'),
-(4, 'avi cohen', 'avi@gmail.com', '$2y$10$e3ACENsz.obv002cZNDi1.HhlgDLYByWhFDbMZ/pxKH41M5nAcyfe', '2019-01-28 13:05:38', '2019-01-28 13:05:38'),
-(5, 'new', 'new@gmail.com', '$2y$10$Jf4pfgZL3U13hAfFOjUZ4Ocv1mOnDR4uBmqP/Nd/Gwn8Z.lVnLMbO', '2019-01-30 11:46:44', '2019-01-30 11:46:44'),
-(6, 'new2', 'new2@gmail.com', '$2y$10$eRM.4Hwc17GiKCoayjjO6uhBMat1Sq/UMwtkJCnBvwcHlqMvVfoAW', '2019-01-30 11:48:24', '2019-01-30 11:48:24'),
-(7, 'new3', 'new3@gmail.com', '$2y$10$ocQrOa2QUY7x2EBaTJWVTexuRY4LLaMc940K/TsZ/JNidtW2mlKx2', '2019-01-30 11:57:11', '2019-01-30 11:57:11'),
-(8, 'imya57', 'imya57@gmail.com', '$2y$10$0nuN8r5rHn35D6eX/3QVKOqUThS6TJ5RDbbaC9LRlr9ePk6zBfnGu', '2019-01-30 11:58:00', '2019-01-30 11:58:00'),
-(9, 'imya', 'imya@gmail.com', '$2y$10$zGN0F518cS0gcnWn1C0IO.YQDJCbcB1fqYf0abnwDnk5lU8y/dXta', '2019-02-09 18:10:24', '2019-02-09 18:10:24'),
-(10, 'test1', 'test1@gmail.com', '$2y$10$2nq/MuW8kTEtJb8BkOpX/uNA5XPhSDDkbV2.3sIym1vgBtwhnu.Qe', '2019-02-15 13:26:44', '2019-02-15 13:26:44');
+(1, 'imya56', 'imya56@gmail.com', '$2y$10$BqhhyC06a0.3ANFhdUsB/eSJj22MlAQ/vmkxfMSzSLu0tjbkiNm/O', '2019-02-27 22:40:18', '2019-02-27 22:40:18');
 
 -- --------------------------------------------------------
 
@@ -196,6 +222,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `updated_at`, `created_a
 --
 
 CREATE TABLE `users_roles` (
+  `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -204,14 +231,9 @@ CREATE TABLE `users_roles` (
 -- Дамп данных таблицы `users_roles`
 --
 
-INSERT INTO `users_roles` (`user_id`, `role_id`) VALUES
-(3, 6),
-(4, 7),
-(6, 7),
-(7, 7),
-(8, 7),
-(9, 7),
-(10, 7);
+INSERT INTO `users_roles` (`id`, `user_id`, `role_id`) VALUES
+(1, 1, 6),
+(2, 2, 6);
 
 -- --------------------------------------------------------
 
@@ -232,7 +254,14 @@ INSERT INTO `wishlists` (`user_id`, `product_id`) VALUES
 (9, 1),
 (9, 2),
 (9, 16),
-(9, 14);
+(9, 14),
+(14, 21),
+(3, 20),
+(3, 14),
+(3, 16),
+(3, 1),
+(3, 2),
+(1, 22);
 
 --
 -- Индексы сохранённых таблиц
@@ -248,6 +277,12 @@ ALTER TABLE `categories`
 -- Индексы таблицы `contents`
 --
 ALTER TABLE `contents`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `home_products`
+--
+ALTER TABLE `home_products`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -278,6 +313,12 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Индексы таблицы `users_roles`
+--
+ALTER TABLE `users_roles`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -294,6 +335,12 @@ ALTER TABLE `contents`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
+-- AUTO_INCREMENT для таблицы `home_products`
+--
+ALTER TABLE `home_products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
 -- AUTO_INCREMENT для таблицы `menus`
 --
 ALTER TABLE `menus`
@@ -303,19 +350,25 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `users_roles`
+--
+ALTER TABLE `users_roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
